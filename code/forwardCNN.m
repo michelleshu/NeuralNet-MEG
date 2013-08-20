@@ -10,10 +10,9 @@ numTest = 2;   % number of words to use for testing
 labelNo = 76;   % index of semantic feature to be used as label
 
 
-% train and test will contain nf x fl representations of words                           
-                           
+% train and test will contain nf x fl representations of words                                                 
 train = struct('data', zeros(params.numWords - numTest, nf, fl), ...
-        'labels', [], 'count', 0, 'word', []);
+        'labels', [], 'count', 0, 'words', []);
 test = struct('data', zeros(numTest, nf, fl), 'labels', [], 'count', 0, ...
         'words', []);
 

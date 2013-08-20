@@ -10,19 +10,26 @@ disp('Forward Prop Train...');
 % Output: numTrain x numRNN x numHid
 train.data = forward(train.data, rnn, params);
 
+% Forward prop testing data
+disp('Forward Prop Test...');
+test.data = forward(test.data, rnn, params);
+
+train.data = train.data(:, :)';
+test.data = test.data(:, :)';
+
 end
 
 function rnnData = forward(data, rnn, params)
 data = permute(data, [2 3 1]);
-numWords = numel(data, 3);
+numWords = size(data, 3);
 
 rnnData = zeros(params.numRNN, params.numFilters, numWords);
-for r = 1 : numRNN
+for r = 1 : params.numRNN
     if mod(r, 8)==0
         disp(['RNN: ' num2str(r)]);
     end
     
-    tree = data;
+    tree = data;  
     
     % Layer 1
     WTemp = squeeze(rnn.WTemp(r, :, :));
@@ -35,10 +42,16 @@ for r = 1 : numRNN
     treeFront = tanh(WFront * reshape(tree(:, [5 6 9], :), [], numWords));
     treeVis = tanh(WVis * reshape(tree(:, [7 8 10], :), [], numWords));
     
-    % Layer 2
+    % Layer 2 (top layer)
     WTop = squeeze(rnn.WTop(r, :, :));
-    rnnData(r, :, :) = squeeze(tree);
-    
+    tree = cat(3, treeTemp, treePar, treeFront, treeVis);
+    tree = permute(tree, [1 3 2]);
+    tree = tanh(WTop * reshape(tree, [], numWords));
+
+    rnnData(r, :, :) = tree;    
+end
+
+rnnData = permute(rnnData, [3 1 2]);
 end
 
 function rnn = initRandomRNNWeights(params)
