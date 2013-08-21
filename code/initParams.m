@@ -3,10 +3,11 @@ function params = initParams()
 % load the data to be used
 load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/data/D/D_raw_avrg.mat');
 params.data = data(:, :, 53:202);   % cut to range 0 - 750 ms
+params.time = time(53:202);
 params.wordNames = words;
 
 % load the semantic features matrix
-load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/sem_matrix.mat');
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/sem_matrix2.mat');
 params.semMatrix = sem_matrix;
 
 % set the number of words that we have data for

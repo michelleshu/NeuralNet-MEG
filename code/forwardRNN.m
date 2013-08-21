@@ -1,22 +1,21 @@
-function [train test] = forwardRNN(train, test, params)
+function forwardRNN(filters, params)
 % Take final output from CNN and stack an RNN on top.
 % At each level, children will be pooled according to progressively more 
 % general brain regions.
 
+% Extract features from raw data
+data = extractFeaturesAllWords(filters, params);
+time = params.time;
+words = params.wordNames;
+
 rnn = initRandomRNNWeights(params);
 
 % Forward prop training data
-disp('Forward Prop Train...');
+disp('Forward Propagating through RNNs...');
 % Output: numTrain x numRNN x numHid
-train.data = forward(train.data, rnn, params);
+data = forward(data, rnn, params);
 
-% Forward prop testing data
-disp('Forward Prop Test...');
-test.data = forward(test.data, rnn, params);
-
-train.data = train.data(:, :)';
-test.data = test.data(:, :)';
-
+save('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/data/D/D_crnn_avrg.mat', 'data', 'time', 'words');
 end
 
 function rnnData = forward(data, rnn, params)

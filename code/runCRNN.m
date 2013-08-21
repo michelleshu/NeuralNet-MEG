@@ -1,0 +1,18 @@
+[filters, params] = pretrain(initParams());
+forwardRNN(filters, params);
+classify_mag_feats;
+clear;
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/D/D_crnn_1.mat');
+accuracy_example;
+clear;
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/D/D_crnn_2.mat');
+accuracy_example;
+clear;
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/D/D_crnn_3.mat');
+accuracy_example;
+clear;
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/D/D_crnn_4.mat');
+accuracy_example;
+clear;
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/D/D_crnn_5.mat');
+accuracy_example;

@@ -6,7 +6,7 @@ nf = params.numFilters;
 fl = params.numRegions;    % final length of input feature representation
                            % equal to # of brain regions pooled into
 
-numTest = 2;   % number of words to use for testing
+numTest = 2;    % number of words to use for testing
 labelNo = 76;   % index of semantic feature to be used as label
 
 

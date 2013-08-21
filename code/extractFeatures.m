@@ -1,24 +1,17 @@
 function features = extractFeatures(img, filters, params)
-%
+
 % 1. convolve input features with kernels
-%
 cim = convolve(img,filters,params);
 
-%
+
 % 2. rectify with absolute val
-%
 rim = abs(cim);
 
 % Leave out for now:
 % 3. local normalization
-%
 % lnim = localnorm(rim);
 
-%
 % 4. average down sampling
-%
-
-% What happens if we don't pool here?
 features = avdown(rim, params);
 
 function out = avdown(in, params)

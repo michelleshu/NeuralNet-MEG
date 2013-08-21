@@ -1,6 +1,5 @@
 
-
-load('/Users/michelleshu/Documents/Mitchell/CRNN/results/D/D_convnopool_5.mat');
+% load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/D/D_crnn_5.mat');
 % will load
 % folds: [60x1 double]
 % ests: [60x218 double]
