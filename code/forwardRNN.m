@@ -15,7 +15,7 @@ disp('Forward Propagating through RNNs...');
 % Output: numTrain x numRNN x numHid
 data = forward(data, rnn, params);
 
-save('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/data/D/D_crnn_avrg.mat', 'data', 'time', 'words');
+save(params.out_file, 'data', 'time', 'words');
 end
 
 function rnnData = forward(data, rnn, params)
@@ -24,7 +24,7 @@ numWords = size(data, 3);
 
 rnnData = zeros(params.numRNN, params.numFilters, numWords);
 for r = 1 : params.numRNN
-    if mod(r, 8)==0
+    if mod(r, 10)==0
         disp(['RNN: ' num2str(r)]);
     end
     

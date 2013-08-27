@@ -1,13 +1,20 @@
-function centroids = runkmeans(X, k, iterations)
+function centroids = run_kmeans(X, k)
 
 x2 = sum(X.^2,2);
 centroids = randn(k,size(X,2))*0.1;%X(randsample(size(X,1), k), :);
+
+% Initialize centroids at random sample of patches
+% centroids = X(randsample(size(X, 1), k), :);
+
 BATCH_SIZE=1000;
 
-for itr = 1:iterations
-    if mod(itr,100) == 0
-        fprintf('K-means iteration %d / %d\n', itr, iterations);
-    end
+done = false;
+itr = 1;
+
+% for itr = 1:iterations
+while ~done
+    
+    old_centroids = centroids;
     
     c2 = 0.5*sum(centroids.^2,2);
     
@@ -34,4 +41,12 @@ for itr = 1:iterations
     % just zap empty centroids so they don't introduce NaNs everywhere.
     badIndex = find(counts == 0);
     centroids(badIndex, :) = 0;
+    
+    diff = max(max(abs(centroids - old_centroids)));
+    if diff == 0
+        fprintf('K-means converged after %d iterations\n', itr);
+        done = true;
+    end
+    
+    itr = itr + 1;
 end

@@ -1,6 +1,6 @@
 load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/sem_matrix.mat');
 zscore_w1000 = 0;
-zscore_data = 1;
+zscore_data = 0;
 
 numWords=60;
 numFolds =30;
@@ -12,7 +12,7 @@ time_end=0.75;
 if zscore_w1000 == 0,
     sem_matrix = zscore(sem_matrix);
 else
-    i1000 = load('~/bagOfFeatures.mat');
+    i1000 = load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/bagOfFeatures.mat');
     
     sem_mat1000 = (i1000.features(:,1:218)-3)/2;
     
@@ -26,7 +26,7 @@ end
 
 sem_length = size(sem_matrix,2);
 
-subj_ids = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
+subj_ids = {'A'}; %, 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
 
 % feats_dir = '~/fmri/data/20questions/features/';
 % res_dir = '/other/bdstore01x/afyshe/fmri/results/20questions/l2/z_data_zscore1000/';
@@ -49,7 +49,7 @@ end
 
 
 
-feat_types  = {'raw'};%'raw','gp','wmean','wslope'};%,'fft_power','fft_phase'};%,'cwave_haar'};%,'corr','cwave_haar'};
+feat_types  = {'crnn'};%'raw','gp','wmean','wslope'};%,'fft_power','fft_phase'};%,'cwave_haar'};%,'corr','cwave_haar'};
 
 save(sprintf('%sparams.mat',res_dir),'numWords','numFolds','num_trials',...
     'zscore_folds','time_start','time_end','sem_matrix','zscore_w1000',...
@@ -83,19 +83,19 @@ for s = 1:length(subj_ids),
         struct = load(cur_fname);
         
        % COMMENTED OUT MS
-        time = struct.time;
-        
-        t_ind = time >=time_start & time <=time_end;
-        time = struct.time(t_ind);
-        if ndims(struct.data) == 3,
-            struct.data = struct.data(:,:,t_ind);
-        else
-            if ndims(struct.data) ~= 4,
-                fprintf('Unknown num dims %i\n', ndims(struct.data) );
-                die;
-            end
-            struct.data = struct.data(:,:,:,t_ind);
-        end
+%         time = struct.time;
+%         
+%         t_ind = time >=time_start & time <=time_end;
+%         time = struct.time(t_ind);
+%         if ndims(struct.data) == 3,
+%             struct.data = struct.data(:,:,t_ind);
+%         else
+%             if ndims(struct.data) ~= 4,
+%                 fprintf('Unknown num dims %i\n', ndims(struct.data) );
+%                 die;
+%             end
+%             struct.data = struct.data(:,:,:,t_ind);
+%         end
         
         words = struct.words;
         s_size= size(struct.data);
@@ -125,7 +125,7 @@ for s = 1:length(subj_ids),
                     sprintf('%s/%s_%s_%i_101-end.mat',res_sub_dir,subj,...
                     feat_types{f_type},tr),zscore_folds);
             else
-                disp(size(struct.data));
+                % disp(size(struct.data));
                 doOneCrossValNoZ(struct.data, sem_matrix, folds, numFolds, numWords, ...
                     sprintf('%s/%s_%s_%i.mat',res_sub_dir,subj,...
                     feat_types{f_type},tr),zscore_folds, 'cosine');

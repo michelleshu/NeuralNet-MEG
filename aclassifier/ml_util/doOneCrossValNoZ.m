@@ -43,7 +43,7 @@ for i = 1:numFolds,
 %     
     
 
-    fprintf('r:%f\n',median(r));
+   % fprintf('r:%f\n',median(r));
     
     testBrainExample=cur_data(folds==i,:);
     testWordNums = find(folds==i);

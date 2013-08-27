@@ -1,5 +1,7 @@
+function [acc_ones, acc_twos] = getAccuracy(filename)
 
-load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/J/J_crnn_5.mat');
+load(filename);
+% load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/J/J_crnn_5.mat');
 % will load
 % folds: [60x1 double]
 % ests: [60x218 double]
@@ -54,5 +56,5 @@ for i = 1:num_folds,
     
 end
 
-fprintf('1 vs 2 accuracy %.2f\n',100*mean(wons(:)));
-fprintf('2 vs 2 accuracy %.2f\n',100*mean(twos));
+acc_ones = 100*mean(wons(:));
+acc_twos = 100*mean(twos);

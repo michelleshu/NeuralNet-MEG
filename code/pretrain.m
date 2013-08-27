@@ -15,7 +15,7 @@ P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
 % Now whiten patches before pretraining
 patches = bsxfun(@minus, patches, M) * P;
 
-filters = run_kmeans(patches,params.numFilters,1000);
+filters = run_kmeans(patches,params.numFilters);
 
 params.whiten.P = P;
 params.whiten.M = M;
