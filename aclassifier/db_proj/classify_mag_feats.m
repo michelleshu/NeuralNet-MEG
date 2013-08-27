@@ -1,4 +1,4 @@
-load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/sem_matrix.mat');
+load('./sem_matrix.mat');
 zscore_w1000 = 0;
 zscore_data = 0;
 
@@ -12,7 +12,7 @@ time_end=0.75;
 if zscore_w1000 == 0,
     sem_matrix = zscore(sem_matrix);
 else
-    i1000 = load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/bagOfFeatures.mat');
+    i1000 = load('./bagOfFeatures.mat');
     
     sem_mat1000 = (i1000.features(:,1:218)-3)/2;
     
@@ -26,7 +26,7 @@ end
 
 sem_length = size(sem_matrix,2);
 
-subj_ids = {'A'}; %, 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
+subj_ids = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
 
 % feats_dir = '~/fmri/data/20questions/features/';
 % res_dir = '/other/bdstore01x/afyshe/fmri/results/20questions/l2/z_data_zscore1000/';
@@ -36,8 +36,8 @@ subj_ids = {'A'}; %, 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
 %feats_dir = '~/research/fmri/data/20questions/features/';
 
 
-res_dir = '/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results';
-feats_dir = '/Users/michelleshu/Documents/Mitchell/CRNN-MEG/data';
+res_dir = './results';
+feats_dir = './data';
 
 % subj_ids = {'A','B','C'};%{'A','B','C','D','E','F','G','I','J'};
 % res_dir = '~/research/fmri/results/l2/noz_data/';

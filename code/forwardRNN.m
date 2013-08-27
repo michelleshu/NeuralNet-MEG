@@ -24,10 +24,6 @@ numWords = size(data, 3);
 
 rnnData = zeros(params.numRNN, params.numFilters, numWords);
 for r = 1 : params.numRNN
-    if mod(r, 10)==0
-        disp(['RNN: ' num2str(r)]);
-    end
-    
     tree = data;  
     
     % Layer 1
@@ -49,6 +45,8 @@ for r = 1 : params.numRNN
 
     rnnData(r, :, :) = tree;    
 end
+
+disp([num2str(params.numRNN) ' trained']);
 
 rnnData = permute(rnnData, [3 1 2]);
 end
