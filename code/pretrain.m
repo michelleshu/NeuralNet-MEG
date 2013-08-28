@@ -7,18 +7,19 @@ patches = getAllPatches(params);    % Use all patches for pre-training
 % normalize for contrast
 patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches,2)), sqrt(var(patches,[],2)+10));
 
-C = cov(patches);
-M = mean(patches);
-[V,D] = eig(C);
-P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
+% Leave out whitening
+% C = cov(patches);
+% M = mean(patches);
+% [V,D] = eig(C);
+% P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
 
 % Now whiten patches before pretraining
-patches = bsxfun(@minus, patches, M) * P;
+% patches = bsxfun(@minus, patches, M) * P;
 
 filters = run_kmeans(patches,params.numFilters);
 
-params.whiten.P = P;
-params.whiten.M = M;
+% params.whiten.P = P;
+% params.whiten.M = M;
 end
 
 function patches = getAllPatches(params)
