@@ -1,7 +1,6 @@
 function [acc_ones, acc_twos] = getAccuracy(filename)
 
 load(filename);
-% load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/J/J_crnn_5.mat');
 % will load
 % folds: [60x1 double]
 % ests: [60x218 double]
