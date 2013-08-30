@@ -1,8 +1,8 @@
-train_iters = 5;
-subject_ids = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
+train_iters = 1;
+subject_ids = {'A', 'C', 'E', 'G'};
 results_dir = './results';
-K_options = [50, 60, 70, 80];
-R_options = [60, 80, 100, 120];
+K_options = [100, 150, 200];
+R_options = [50, 100];
 
 for k_index = 1 : numel(K_options)
     k = K_options(k_index); % select number of filters to train
@@ -47,6 +47,6 @@ for k_index = 1 : numel(K_options)
         
         save(sprintf('./acc_results/acc_%dK_%dR.mat', k, r), ...
             'one_mean_acc', 'two_mean_acc');
-        fprintf('Accuracy results saved to ./acc_results/acc_%dK_%dR.mat', k, r);
+        fprintf('Accuracy results saved to ./acc_results/acc_%dK_%dR.mat\n', k, r);
     end
 end

@@ -1,7 +1,6 @@
 function params = initParams(subject, K, R)
 
 % load the data to be used
-% load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/data/F/F_raw_avrg.mat');
 data_dir = './data';
 params.in_file = sprintf('%s/%s/%s_raw_avrg.mat', data_dir, subject, subject);
 params.out_file = sprintf('%s/%s/%s_crnn_avrg.mat', data_dir, subject, subject);
@@ -17,8 +16,14 @@ params.semMatrix = sem_matrix;
 % set the number of words that we have data for
 params.numWords = 60;
 
-% set the number of time points in our timeseries
-params.numTimePoints = 150;
+% set total number of time points in entire timeseries
+params.numTotalTimePoints = 150;
+
+% sections to divide time into (must be a factor of totalTimePoints)
+params.numTimeSections = 1;
+
+% set the number of time points in each block of our timeseries
+params.numSectionTimePoints = params.numTotalTimePoints / params.numTimeSections;
 
 % set the number of sensors
 params.numSensors = 306;

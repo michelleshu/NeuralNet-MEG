@@ -1,5 +1,5 @@
 
-load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/J/J_crnn_5.mat');
+load('/Users/michelleshu/Documents/Mitchell/CRNN-MEG/results/A/A_crnn_4.mat');
 % will load
 % folds: [60x1 double]
 % ests: [60x218 double]

@@ -26,7 +26,7 @@ end
 
 sem_length = size(sem_matrix,2);
 
-subj_ids = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
+subj_ids = {'A', 'C', 'E', 'G'};
 
 % feats_dir = '~/fmri/data/20questions/features/';
 % res_dir = '/other/bdstore01x/afyshe/fmri/results/20questions/l2/z_data_zscore1000/';

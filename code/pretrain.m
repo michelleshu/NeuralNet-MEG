@@ -1,36 +1,38 @@
 function [ filters, params ] = pretrain( params )
-% Adapted from Richard Socher for use with MEG data
+    patches = getFullTimeSeries(params);    % Retrieve all timeseries from data
+    patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches,2)), ...
+        sqrt(var(patches,[],2)));           % Normalize for contrast
+    patches = sectionPatches(patches, params);      % Section off the timeseries
 
-patches = getAllPatches(params);    % Use all patches for pre-training
-
-%% get whitening info from patches
-% normalize for contrast
-patches = bsxfun(@rdivide, bsxfun(@minus, patches, mean(patches,2)), sqrt(var(patches,[],2)+10));
-
-% Leave out whitening
-% C = cov(patches);
-% M = mean(patches);
-% [V,D] = eig(C);
-% P = V * diag(sqrt(1./(diag(D) + 0.1))) * V';
-
-% Now whiten patches before pretraining
-% patches = bsxfun(@minus, patches, M) * P;
-
-filters = run_kmeans(patches,params.numFilters);
-
-% params.whiten.P = P;
-% params.whiten.M = M;
+    filters = run_kmeans(patches,params.numFilters);
 end
 
-function patches = getAllPatches(params)
-% Use ALL patches for pre-training, not random selection like in getPatches
 
-% Allocate space for final patches matrix
-patches = zeros(params.numWords * params.numSensors, params.numTimePoints);
-for word = 1 : params.numWords
-    patches((word - 1) * params.numSensors + 1 : word * params.numSensors, :) = ...
-        squeeze(params.data(word, :, :));
+function patches = getFullTimeSeries(params)
+% Use ALL patches for pre-training
+
+    % Allocate space for final patches matrix
+    patches = zeros(params.numWords * params.numSensors, params.numTotalTimePoints);
+    for word = 1 : params.numWords
+        patches((word - 1) * params.numSensors + 1 : word * params.numSensors, :) = ...
+            squeeze(params.data(word, :, :));
+    end
 end
+
+function out = sectionPatches(in, params)
+% Section off full timeseries into sections and vertically concatenate them
+
+    % Allocate space for final patches matrix
+    out = zeros(params.numWords * params.numSensors * params.numTimeSections, ...
+        params.numTotalTimePoints / params.numTimeSections);
+    
+    curr_row = 1;   % keep track of row to write to
+    for section = 1 : params.numTimeSections
+        out(curr_row : curr_row + (params.numWords * params.numSensors) - 1, :) = ...
+            in(:, (section - 1) * params.numSectionTimePoints + 1 : ...
+            section * params.numSectionTimePoints);
+        curr_row = curr_row + (params.numWords * params.numSensors);
+    end
 end
 
 
