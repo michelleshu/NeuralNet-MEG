@@ -1,4 +1,4 @@
-function params = initParams(subject, K, R)
+function params = initParams(subject, K, R, TS)
 
 % load the data to be used
 data_dir = './data';
@@ -20,7 +20,7 @@ params.numWords = 60;
 params.numTotalTimePoints = 150;
 
 % sections to divide time into (must be a factor of totalTimePoints)
-params.numTimeSections = 1;
+params.numTimeSections = TS;
 
 % set the number of time points in each block of our timeseries
 params.numSectionTimePoints = params.numTotalTimePoints / params.numTimeSections;
