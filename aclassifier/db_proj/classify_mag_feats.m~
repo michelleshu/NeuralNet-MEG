@@ -28,7 +28,7 @@ end
 
 sem_length = size(sem_matrix,2);
 
-subj_ids = {'A', 'C', 'E', 'G'};
+subj_ids = {'A'};
 
 % feats_dir = '~/fmri/data/20questions/features/';
 % res_dir = '/other/bdstore01x/afyshe/fmri/results/20questions/l2/z_data_zscore1000/';
@@ -50,8 +50,8 @@ if ~exist(res_dir,'dir'),
 end
 
 
-feat_str = sprintf('crnn_%dK_%dR_%dTS', K, R, TS);
-feat_types  = {feat_str};%'raw','gp','wmean','wslope'};%,'fft_power','fft_phase'};%,'cwave_haar'};%,'corr','cwave_haar'};
+feat_str = sprintf('crnn_%dK_%dR_%d
+feat_types  = {'crnn'};%'raw','gp','wmean','wslope'};%,'fft_power','fft_phase'};%,'cwave_haar'};%,'corr','cwave_haar'};
 
 save(sprintf('%sparams.mat',res_dir),'numWords','numFolds','num_trials',...
     'zscore_folds','time_start','time_end','sem_matrix','zscore_w1000',...
@@ -137,5 +137,4 @@ for s = 1:length(subj_ids),
         
     end
     
-end
 end

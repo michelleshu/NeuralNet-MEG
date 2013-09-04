@@ -1,8 +1,8 @@
 train_iters = 3;
-subject_ids = {'A', 'C', 'E', 'G'};
+subject_ids = {'A'};
 results_dir = './results';
-K_options = 20;
-R_options = 20;
+K_options = [150, 200, 250, 300];
+R_options = 300;
 TS_options = 1;
 
 for k_index = 1 : numel(K_options)
@@ -32,7 +32,7 @@ for k_index = 1 : numel(K_options)
                 end
 
                 % Run all RNN word representations through classifier.
-                classify_mag_feats(k, r, ts);
+                classify_mag_feats(K, R, TS);
 
                 % Analyze accuracy of classification. Print results to console.
                 for s = 1 : length(subject_ids)
@@ -40,11 +40,9 @@ for k_index = 1 : numel(K_options)
                     acc_ones = zeros(5, 1);
                     acc_twos = zeros(5, 1);
                     for t = 1 : 5
-                        filename = sprintf('%s/%s/%s_crnn_%dK_%dR_%dTS_%s.mat', results_dir, ...
-                            subject, subject, k, r, ts, num2str(t));
+                        filename = sprintf('%s/%s/%s_crnn_%s.mat', results_dir, ...
+                            subject, subject, num2str(t));
                         [acc_ones(t), acc_twos(t)] = getAccuracy(filename);
-                        fprintf('Accuracies: %2.3f\t%2.3f \n', ...
-                            acc_ones(t), acc_twos(t));  
                     end
 
                     one_mean_acc(s, i) = mean(acc_ones);

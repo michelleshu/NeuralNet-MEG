@@ -3,7 +3,8 @@ function params = initParams(subject, K, R, TS)
 % load the data to be used
 data_dir = './data';
 params.in_file = sprintf('%s/%s/%s_raw_avrg.mat', data_dir, subject, subject);
-params.out_file = sprintf('%s/%s/%s_crnn_avrg.mat', data_dir, subject, subject);
+params.out_file = sprintf('%s/%s/%s_crnn_%dK_%dR_%dTS_avrg.mat', ...
+    data_dir, subject, subject, K, R, TS);
 load(params.in_file);
 params.data = data(:, :, 53:202);   % cut to range 0 - 750 ms
 params.time = time(53:202);
