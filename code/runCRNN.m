@@ -1,9 +1,9 @@
-train_iters = 3;
-subject_ids = {'A', 'C', 'E', 'G'};
+train_iters = 1;
+subject_ids = {'A'};
 results_dir = './results';
-K_options = 20;
-R_options = 20;
-TS_options = 1;
+K_options = 150;
+R_options = 100;
+TS_options = 3;
 
 for k_index = 1 : numel(K_options)
     k = K_options(k_index); % select number of filters to train

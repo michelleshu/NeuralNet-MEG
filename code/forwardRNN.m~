@@ -35,6 +35,8 @@ for r = 1 : params.numRNN
         treeFront = tanh(rnn.WFront * reshape(tree(:, [5 6 9], :), [], params.numWords));
         treeVis = tanh(rnn.WVis * reshape(tree(:, [7 8 10], :), [], params.numWords));
         
+        plot(treeTemp)
+        
         % Layer 1 (top layer)
         tree = cat(3, treeTemp, treePar, treeFront, treeVis);
 
