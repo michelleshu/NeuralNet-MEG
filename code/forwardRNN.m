@@ -19,10 +19,10 @@ end
 function rnnData = forward(data, params)
 data = permute(data, [2 3 1]);
 
-rnnData = zeros(params.numRNN, params.numFilters * 3, params.numWords);
+rnnData = zeros(params.numRNN, params.numFilters * params.numTimeSections, params.numWords);
 for r = 1 : params.numRNN
     % Reserve space for all time sections of top level vector
-    top_vector = zeros(params.numFilters * 3, params.numWords);
+    top_vector = zeros(params.numFilters * params.numTimeSections, params.numWords);
     for timeSection = 1 : params.numTimeSections
         rnn = initRandomRNNWeights(params);
         
