@@ -1,0 +1,996 @@
+get(0, 'Diary')
+
+ans =
+
+on
+
+diary on
+get(0, 'Diary')
+
+ans =
+
+on
+
+runCRNN()
+Iteration: 1
+Training Subject: A
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: B
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: C
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: D
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: E
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: F
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: G
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: I
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: J
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Now load /usr1/homes/mshu/CRNN-MEG/data/A/A_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:33:26
+Trial 2, 26-Aug-2013 13:33:41
+Trial 3, 26-Aug-2013 13:33:56
+Trial 4, 26-Aug-2013 13:34:10
+Trial 5, 26-Aug-2013 13:34:24
+Now load /usr1/homes/mshu/CRNN-MEG/data/B/B_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:34:39
+Trial 2, 26-Aug-2013 13:34:54
+Trial 3, 26-Aug-2013 13:35:09
+Trial 4, 26-Aug-2013 13:35:24
+Trial 5, 26-Aug-2013 13:35:38
+Now load /usr1/homes/mshu/CRNN-MEG/data/C/C_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:35:53
+Trial 2, 26-Aug-2013 13:36:08
+Trial 3, 26-Aug-2013 13:36:22
+Trial 4, 26-Aug-2013 13:36:38
+Trial 5, 26-Aug-2013 13:36:52
+Now load /usr1/homes/mshu/CRNN-MEG/data/D/D_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:37:07
+Trial 2, 26-Aug-2013 13:37:21
+Trial 3, 26-Aug-2013 13:37:36
+Trial 4, 26-Aug-2013 13:37:51
+Trial 5, 26-Aug-2013 13:38:05
+Now load /usr1/homes/mshu/CRNN-MEG/data/E/E_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:38:20
+Trial 2, 26-Aug-2013 13:38:35
+Trial 3, 26-Aug-2013 13:38:50
+Trial 4, 26-Aug-2013 13:39:05
+Trial 5, 26-Aug-2013 13:39:19
+Now load /usr1/homes/mshu/CRNN-MEG/data/F/F_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:39:34
+Trial 2, 26-Aug-2013 13:39:49
+Trial 3, 26-Aug-2013 13:40:04
+Trial 4, 26-Aug-2013 13:40:19
+Trial 5, 26-Aug-2013 13:40:33
+Now load /usr1/homes/mshu/CRNN-MEG/data/G/G_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:40:48
+Trial 2, 26-Aug-2013 13:41:04
+Trial 3, 26-Aug-2013 13:41:18
+Trial 4, 26-Aug-2013 13:41:32
+Trial 5, 26-Aug-2013 13:41:47
+Now load /usr1/homes/mshu/CRNN-MEG/data/I/I_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:42:01
+Trial 2, 26-Aug-2013 13:42:16
+Trial 3, 26-Aug-2013 13:42:31
+Trial 4, 26-Aug-2013 13:42:46
+Trial 5, 26-Aug-2013 13:43:01
+Now load /usr1/homes/mshu/CRNN-MEG/data/J/J_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:43:16
+Trial 2, 26-Aug-2013 13:43:31
+Trial 3, 26-Aug-2013 13:43:47
+Trial 4, 26-Aug-2013 13:44:01
+Trial 5, 26-Aug-2013 13:44:17
+Results for Subject A
+Trial 1
+1 vs 2: 75.000000	 2 vs 2: 80.000000
+Trial 2
+1 vs 2: 78.333333	 2 vs 2: 90.000000
+Trial 3
+1 vs 2: 75.000000	 2 vs 2: 76.666667
+Trial 4
+1 vs 2: 80.000000	 2 vs 2: 86.666667
+Trial 5
+1 vs 2: 80.000000	 2 vs 2: 83.333333
+
+Results for Subject B
+Trial 1
+1 vs 2: 71.666667	 2 vs 2: 80.000000
+Trial 2
+1 vs 2: 70.000000	 2 vs 2: 80.000000
+Trial 3
+1 vs 2: 68.333333	 2 vs 2: 80.000000
+Trial 4
+1 vs 2: 83.333333	 2 vs 2: 90.000000
+Trial 5
+1 vs 2: 80.000000	 2 vs 2: 83.333333
+
+Results for Subject C
+Trial 1
+1 vs 2: 58.333333	 2 vs 2: 63.333333
+Trial 2
+1 vs 2: 73.333333	 2 vs 2: 63.333333
+Trial 3
+1 vs 2: 68.333333	 2 vs 2: 70.000000
+Trial 4
+1 vs 2: 70.000000	 2 vs 2: 73.333333
+Trial 5
+1 vs 2: 63.333333	 2 vs 2: 56.666667
+
+Results for Subject D
+Trial 1
+1 vs 2: 80.000000	 2 vs 2: 90.000000
+Trial 2
+1 vs 2: 78.333333	 2 vs 2: 90.000000
+Trial 3
+1 vs 2: 86.666667	 2 vs 2: 96.666667
+Trial 4
+1 vs 2: 86.666667	 2 vs 2: 96.666667
+Trial 5
+1 vs 2: 88.333333	 2 vs 2: 93.333333
+
+Results for Subject E
+Trial 1
+1 vs 2: 76.666667	 2 vs 2: 90.000000
+Trial 2
+1 vs 2: 78.333333	 2 vs 2: 93.333333
+Trial 3
+1 vs 2: 76.666667	 2 vs 2: 83.333333
+Trial 4
+1 vs 2: 76.666667	 2 vs 2: 86.666667
+Trial 5
+1 vs 2: 76.666667	 2 vs 2: 76.666667
+
+Results for Subject F
+Trial 1
+1 vs 2: 70.000000	 2 vs 2: 73.333333
+Trial 2
+1 vs 2: 75.000000	 2 vs 2: 83.333333
+Trial 3
+1 vs 2: 66.666667	 2 vs 2: 66.666667
+Trial 4
+1 vs 2: 70.000000	 2 vs 2: 70.000000
+Trial 5
+1 vs 2: 66.666667	 2 vs 2: 83.333333
+
+Results for Subject G
+Trial 1
+1 vs 2: 68.333333	 2 vs 2: 76.666667
+Trial 2
+1 vs 2: 61.666667	 2 vs 2: 63.333333
+Trial 3
+1 vs 2: 66.666667	 2 vs 2: 76.666667
+Trial 4
+1 vs 2: 71.666667	 2 vs 2: 76.666667
+Trial 5
+1 vs 2: 58.333333	 2 vs 2: 70.000000
+
+Results for Subject I
+Trial 1
+1 vs 2: 55.000000	 2 vs 2: 80.000000
+Trial 2
+1 vs 2: 65.000000	 2 vs 2: 73.333333
+Trial 3
+1 vs 2: 58.333333	 2 vs 2: 70.000000
+Trial 4
+1 vs 2: 50.000000	 2 vs 2: 53.333333
+Trial 5
+1 vs 2: 58.333333	 2 vs 2: 63.333333
+
+Results for Subject J
+Trial 1
+1 vs 2: 66.666667	 2 vs 2: 60.000000
+Trial 2
+1 vs 2: 63.333333	 2 vs 2: 70.000000
+Trial 3
+1 vs 2: 68.333333	 2 vs 2: 76.666667
+Trial 4
+1 vs 2: 66.666667	 2 vs 2: 70.000000
+Trial 5
+1 vs 2: 75.000000	 2 vs 2: 83.333333
+
+Iteration: 2
+Training Subject: A
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: B
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: C
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: D
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: E
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: F
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: G
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: I
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: J
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Now load /usr1/homes/mshu/CRNN-MEG/data/A/A_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:49:56
+Trial 2, 26-Aug-2013 13:50:11
+Trial 3, 26-Aug-2013 13:50:26
+Trial 4, 26-Aug-2013 13:50:41
+Trial 5, 26-Aug-2013 13:50:55
+Now load /usr1/homes/mshu/CRNN-MEG/data/B/B_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:51:10
+Trial 2, 26-Aug-2013 13:51:26
+Trial 3, 26-Aug-2013 13:51:40
+Trial 4, 26-Aug-2013 13:51:56
+Trial 5, 26-Aug-2013 13:52:10
+Now load /usr1/homes/mshu/CRNN-MEG/data/C/C_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:52:25
+Trial 2, 26-Aug-2013 13:52:40
+Trial 3, 26-Aug-2013 13:52:55
+Trial 4, 26-Aug-2013 13:53:10
+Trial 5, 26-Aug-2013 13:53:25
+Now load /usr1/homes/mshu/CRNN-MEG/data/D/D_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:53:39
+Trial 2, 26-Aug-2013 13:53:54
+Trial 3, 26-Aug-2013 13:54:10
+Trial 4, 26-Aug-2013 13:54:24
+Trial 5, 26-Aug-2013 13:54:39
+Now load /usr1/homes/mshu/CRNN-MEG/data/E/E_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:54:54
+Trial 2, 26-Aug-2013 13:55:09
+Trial 3, 26-Aug-2013 13:55:24
+Trial 4, 26-Aug-2013 13:55:40
+Trial 5, 26-Aug-2013 13:55:54
+Now load /usr1/homes/mshu/CRNN-MEG/data/F/F_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:56:08
+Trial 2, 26-Aug-2013 13:56:23
+Trial 3, 26-Aug-2013 13:56:38
+Trial 4, 26-Aug-2013 13:56:53
+Trial 5, 26-Aug-2013 13:57:08
+Now load /usr1/homes/mshu/CRNN-MEG/data/G/G_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:57:23
+Trial 2, 26-Aug-2013 13:57:38
+Trial 3, 26-Aug-2013 13:57:53
+Trial 4, 26-Aug-2013 13:58:07
+Trial 5, 26-Aug-2013 13:58:22
+Now load /usr1/homes/mshu/CRNN-MEG/data/I/I_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:58:37
+Trial 2, 26-Aug-2013 13:58:52
+Trial 3, 26-Aug-2013 13:59:07
+Trial 4, 26-Aug-2013 13:59:22
+Trial 5, 26-Aug-2013 13:59:36
+Now load /usr1/homes/mshu/CRNN-MEG/data/J/J_crnn_avrg.mat
+Trial 1, 26-Aug-2013 13:59:52
+Trial 2, 26-Aug-2013 14:00:07
+Trial 3, 26-Aug-2013 14:00:22
+Trial 4, 26-Aug-2013 14:00:37
+Trial 5, 26-Aug-2013 14:00:51
+Results for Subject A
+Trial 1
+1 vs 2: 75.000000	 2 vs 2: 83.333333
+Trial 2
+1 vs 2: 70.000000	 2 vs 2: 90.000000
+Trial 3
+1 vs 2: 70.000000	 2 vs 2: 80.000000
+Trial 4
+1 vs 2: 75.000000	 2 vs 2: 80.000000
+Trial 5
+1 vs 2: 76.666667	 2 vs 2: 86.666667
+
+Results for Subject B
+Trial 1
+1 vs 2: 76.666667	 2 vs 2: 90.000000
+Trial 2
+1 vs 2: 75.000000	 2 vs 2: 86.666667
+Trial 3
+1 vs 2: 86.666667	 2 vs 2: 93.333333
+Trial 4
+1 vs 2: 76.666667	 2 vs 2: 86.666667
+Trial 5
+1 vs 2: 80.000000	 2 vs 2: 86.666667
+
+Results for Subject C
+Trial 1
+1 vs 2: 65.000000	 2 vs 2: 73.333333
+Trial 2
+1 vs 2: 63.333333	 2 vs 2: 63.333333
+Trial 3
+1 vs 2: 56.666667	 2 vs 2: 66.666667
+Trial 4
+1 vs 2: 68.333333	 2 vs 2: 80.000000
+Trial 5
+1 vs 2: 66.666667	 2 vs 2: 73.333333
+
+Results for Subject D
+Trial 1
+1 vs 2: 81.666667	 2 vs 2: 86.666667
+Trial 2
+1 vs 2: 80.000000	 2 vs 2: 90.000000
+Trial 3
+1 vs 2: 85.000000	 2 vs 2: 90.000000
+Trial 4
+1 vs 2: 86.666667	 2 vs 2: 93.333333
+Trial 5
+1 vs 2: 78.333333	 2 vs 2: 83.333333
+
+Results for Subject E
+Trial 1
+1 vs 2: 80.000000	 2 vs 2: 80.000000
+Trial 2
+1 vs 2: 75.000000	 2 vs 2: 76.666667
+Trial 3
+1 vs 2: 76.666667	 2 vs 2: 83.333333
+Trial 4
+1 vs 2: 63.333333	 2 vs 2: 60.000000
+Trial 5
+1 vs 2: 75.000000	 2 vs 2: 80.000000
+
+Results for Subject F
+Trial 1
+1 vs 2: 63.333333	 2 vs 2: 66.666667
+Trial 2
+1 vs 2: 66.666667	 2 vs 2: 66.666667
+Trial 3
+1 vs 2: 55.000000	 2 vs 2: 60.000000
+Trial 4
+1 vs 2: 65.000000	 2 vs 2: 66.666667
+Trial 5
+1 vs 2: 51.666667	 2 vs 2: 66.666667
+
+Results for Subject G
+Trial 1
+1 vs 2: 78.333333	 2 vs 2: 83.333333
+Trial 2
+1 vs 2: 75.000000	 2 vs 2: 76.666667
+Trial 3
+1 vs 2: 70.000000	 2 vs 2: 80.000000
+Trial 4
+1 vs 2: 71.666667	 2 vs 2: 76.666667
+Trial 5
+1 vs 2: 66.666667	 2 vs 2: 73.333333
+
+Results for Subject I
+Trial 1
+1 vs 2: 71.666667	 2 vs 2: 73.333333
+Trial 2
+1 vs 2: 76.666667	 2 vs 2: 70.000000
+Trial 3
+1 vs 2: 65.000000	 2 vs 2: 66.666667
+Trial 4
+1 vs 2: 55.000000	 2 vs 2: 60.000000
+Trial 5
+1 vs 2: 71.666667	 2 vs 2: 76.666667
+
+Results for Subject J
+Trial 1
+1 vs 2: 68.333333	 2 vs 2: 73.333333
+Trial 2
+1 vs 2: 65.000000	 2 vs 2: 60.000000
+Trial 3
+1 vs 2: 70.000000	 2 vs 2: 66.666667
+Trial 4
+1 vs 2: 61.666667	 2 vs 2: 63.333333
+Trial 5
+1 vs 2: 66.666667	 2 vs 2: 60.000000
+
+Iteration: 3
+Training Subject: A
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: B
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: C
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: D
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: E
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: F
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: G
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: I
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Training Subject: J
+K-means iteration 100 / 1000
+K-means iteration 200 / 1000
+K-means iteration 300 / 1000
+K-means iteration 400 / 1000
+K-means iteration 500 / 1000
+K-means iteration 600 / 1000
+K-means iteration 700 / 1000
+K-means iteration 800 / 1000
+K-means iteration 900 / 1000
+K-means iteration 1000 / 1000
+Forward Propagating through RNNs...
+RNN: 10
+RNN: 20
+RNN: 30
+RNN: 40
+RNN: 50
+RNN: 60
+Now load /usr1/homes/mshu/CRNN-MEG/data/A/A_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:06:37
+Trial 2, 26-Aug-2013 14:06:50
+Trial 3, 26-Aug-2013 14:07:05
+Trial 4, 26-Aug-2013 14:07:20
+Trial 5, 26-Aug-2013 14:07:35
+Now load /usr1/homes/mshu/CRNN-MEG/data/B/B_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:07:50
+Trial 2, 26-Aug-2013 14:08:05
+Trial 3, 26-Aug-2013 14:08:20
+Trial 4, 26-Aug-2013 14:08:35
+Trial 5, 26-Aug-2013 14:08:49
+Now load /usr1/homes/mshu/CRNN-MEG/data/C/C_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:09:04
+Trial 2, 26-Aug-2013 14:09:19
+Trial 3, 26-Aug-2013 14:09:34
+Trial 4, 26-Aug-2013 14:09:49
+Trial 5, 26-Aug-2013 14:10:04
+Now load /usr1/homes/mshu/CRNN-MEG/data/D/D_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:10:18
+Trial 2, 26-Aug-2013 14:10:33
+Trial 3, 26-Aug-2013 14:10:48
+Trial 4, 26-Aug-2013 14:11:03
+Trial 5, 26-Aug-2013 14:11:18
+Now load /usr1/homes/mshu/CRNN-MEG/data/E/E_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:11:33
+Trial 2, 26-Aug-2013 14:11:47
+Trial 3, 26-Aug-2013 14:12:03
+Trial 4, 26-Aug-2013 14:12:17
+Trial 5, 26-Aug-2013 14:12:33
+Now load /usr1/homes/mshu/CRNN-MEG/data/F/F_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:12:48
+Trial 2, 26-Aug-2013 14:13:03
+Trial 3, 26-Aug-2013 14:13:18
+Trial 4, 26-Aug-2013 14:13:33
+Trial 5, 26-Aug-2013 14:13:48
+Now load /usr1/homes/mshu/CRNN-MEG/data/G/G_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:14:03
+Trial 2, 26-Aug-2013 14:14:19
+Trial 3, 26-Aug-2013 14:14:33
+Trial 4, 26-Aug-2013 14:14:48
+Trial 5, 26-Aug-2013 14:15:03
+Now load /usr1/homes/mshu/CRNN-MEG/data/I/I_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:15:18
+Trial 2, 26-Aug-2013 14:15:33
+Trial 3, 26-Aug-2013 14:15:48
+Trial 4, 26-Aug-2013 14:16:03
+Trial 5, 26-Aug-2013 14:16:18
+Now load /usr1/homes/mshu/CRNN-MEG/data/J/J_crnn_avrg.mat
+Trial 1, 26-Aug-2013 14:16:33
+Trial 2, 26-Aug-2013 14:16:48
+Trial 3, 26-Aug-2013 14:17:03
+Trial 4, 26-Aug-2013 14:17:18
+Trial 5, 26-Aug-2013 14:17:34
+Results for Subject A
+Trial 1
+1 vs 2: 76.666667	 2 vs 2: 76.666667
+Trial 2
+1 vs 2: 63.333333	 2 vs 2: 80.000000
+Trial 3
+1 vs 2: 71.666667	 2 vs 2: 83.333333
+Trial 4
+1 vs 2: 71.666667	 2 vs 2: 83.333333
+Trial 5
+1 vs 2: 75.000000	 2 vs 2: 80.000000
+
+Results for Subject B
+Trial 1
+1 vs 2: 83.333333	 2 vs 2: 96.666667
+Trial 2
+1 vs 2: 81.666667	 2 vs 2: 86.666667
+Trial 3
+1 vs 2: 85.000000	 2 vs 2: 90.000000
+Trial 4
+1 vs 2: 83.333333	 2 vs 2: 83.333333
+Trial 5
+1 vs 2: 83.333333	 2 vs 2: 93.333333
+
+Results for Subject C
+Trial 1
+1 vs 2: 65.000000	 2 vs 2: 76.666667
+Trial 2
+1 vs 2: 66.666667	 2 vs 2: 73.333333
+Trial 3
+1 vs 2: 68.333333	 2 vs 2: 80.000000
+Trial 4
+1 vs 2: 65.000000	 2 vs 2: 73.333333
+Trial 5
+1 vs 2: 61.666667	 2 vs 2: 70.000000
+
+Results for Subject D
+Trial 1
+1 vs 2: 81.666667	 2 vs 2: 96.666667
+Trial 2
+1 vs 2: 81.666667	 2 vs 2: 93.333333
+Trial 3
+1 vs 2: 88.333333	 2 vs 2: 93.333333
+Trial 4
+1 vs 2: 80.000000	 2 vs 2: 86.666667
+Trial 5
+1 vs 2: 75.000000	 2 vs 2: 90.000000
+
+Results for Subject E
+Trial 1
+1 vs 2: 78.333333	 2 vs 2: 90.000000
+Trial 2
+1 vs 2: 76.666667	 2 vs 2: 86.666667
+Trial 3
+1 vs 2: 71.666667	 2 vs 2: 86.666667
+Trial 4
+1 vs 2: 75.000000	 2 vs 2: 76.666667
+Trial 5
+1 vs 2: 75.000000	 2 vs 2: 83.333333
+
+Results for Subject F
+Trial 1
+1 vs 2: 63.333333	 2 vs 2: 70.000000
+Trial 2
+1 vs 2: 65.000000	 2 vs 2: 76.666667
+Trial 3
+1 vs 2: 60.000000	 2 vs 2: 53.333333
+Trial 4
+1 vs 2: 61.666667	 2 vs 2: 66.666667
+Trial 5
+1 vs 2: 60.000000	 2 vs 2: 70.000000
+
+Results for Subject G
+Trial 1
+1 vs 2: 70.000000	 2 vs 2: 66.666667
+Trial 2
+1 vs 2: 71.666667	 2 vs 2: 66.666667
+Trial 3
+1 vs 2: 70.000000	 2 vs 2: 80.000000
+Trial 4
+1 vs 2: 70.000000	 2 vs 2: 73.333333
+Trial 5
+1 vs 2: 61.666667	 2 vs 2: 70.000000
+
+Results for Subject I
+Trial 1
+1 vs 2: 66.666667	 2 vs 2: 66.666667
+Trial 2
+1 vs 2: 71.666667	 2 vs 2: 70.000000
+Trial 3
+1 vs 2: 65.000000	 2 vs 2: 63.333333
+Trial 4
+1 vs 2: 56.666667	 2 vs 2: 56.666667
+Trial 5
+1 vs 2: 58.333333	 2 vs 2: 70.000000
+
+Results for Subject J
+Trial 1
+1 vs 2: 73.333333	 2 vs 2: 76.666667
+Trial 2
+1 vs 2: 68.333333	 2 vs 2: 66.666667
+Trial 3
+1 vs 2: 78.333333	 2 vs 2: 90.000000
+Trial 4
+1 vs 2: 63.333333	 2 vs 2: 70.000000
+Trial 5
+1 vs 2: 75.000000	 2 vs 2: 86.666667
+
+ls
+accuracy     bagOfFeatures.mat	code  dataparams.mat  output.txt  results	     sem_matrix2.mat
+aclassifier  brainregions	data  minFunc	      progress	  resultsparams.mat  sem_matrix.mat
+
+cd aclassifier
+cd ..
+quit

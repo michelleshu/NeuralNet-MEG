@@ -1,0 +1,207 @@
+-- Raw brain images (t = 0-750 ms)
+1)
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 93.33
+2)
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 96.67
+3)
+1 vs 2 accuracy 91.67
+2 vs 2 accuracy 100.00
+4)
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 100.00
+5)
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 86.67
+
+-- Convolved (50 filters, t = 0-750 ms, pooling by brain region) 
+1)
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 90.00
+
+2)
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 96.67
+
+3)
+1 vs 2 accuracy 91.67
+2 vs 2 accuracy 93.33
+
+4)
+1 vs 2 accuracy 93.33
+2 vs 2 accuracy 93.33
+
+5)
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 96.67
+
+-- Convolved (50 filters, t = 0-750 ms, pooling by sensor number)
+1)
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 90.00
+
+2)
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 83.33
+
+3)
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 86.67
+
+4)
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 90.00
+
+5)
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 93.33
+
+-- Convolved (20 filters, t = 0-750 ms, pooling by brain region)
+1)
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 86.67
+
+2)
+1 vs 2 accuracy 78.33
+2 vs 2 accuracy 83.33
+
+3)
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 93.33
+
+4)
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 83.33
+
+5)
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 93.33
+
+-- " 50 filters
+>> accuracy_example
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 78.33
+2 vs 2 accuracy 83.33
+>> accuracy_example
+1 vs 2 accuracy 90.00
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 93.33
+
+-- " 60 filters
+>> accuracy_example
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 76.67
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 90.00
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 93.33
+
+-- " 70 filters
+>> accuracy_example
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 71.67
+2 vs 2 accuracy 80.00
+>> accuracy_example
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 86.67
+>> accuracy_example
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 90.00
+
+anything 40 filters or below looks worse; but also some variation; ~50-70 filters looks ok
+
+All code above used 6000 patches to train filters.
+
+-- 60 filters, 12000 patches
+
+>> accuracy_example
+1 vs 2 accuracy 81.67
+2 vs 2 accuracy 86.67
+>> accuracy_example
+1 vs 2 accuracy 78.33
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 90.00
+
+-- 60 filters, 18000 patches
+
+>> accuracy_example
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 86.67
+>> accuracy_example
+1 vs 2 accuracy 86.67
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 91.67
+2 vs 2 accuracy 96.67
+>> accuracy_example
+1 vs 2 accuracy 91.67
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 96.67
+
+-- 60 filters, ALL patches, 0-750 ms, 1000 iterations of k-means
+>> accuracy_example
+1 vs 2 accuracy 90.00
+2 vs 2 accuracy 96.67
+>> accuracy_example
+1 vs 2 accuracy 90.00
+2 vs 2 accuracy 96.67
+>> accuracy_example
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 96.67
+>> accuracy_example
+1 vs 2 accuracy 90.00
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 90.00
+>> accuracy_example
+1 vs 2 accuracy 85.00
+2 vs 2 accuracy 93.33
+
+Same as above, NO POOLING of data
+>> accuracy_example
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 83.33
+2 vs 2 accuracy 100.00
+>> accuracy_example
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 96.67
+>> accuracy_example
+1 vs 2 accuracy 90.00
+2 vs 2 accuracy 93.33
+>> accuracy_example
+1 vs 2 accuracy 88.33
+2 vs 2 accuracy 93.33

@@ -1,0 +1,23 @@
+
+
+For a demo of the feature extraction methods on example data (as seen in the report) type "make" in this directory or, open matlab and run "make_sim_data_demo"
+
+
+Files in this directory:
+
+calc_pdist_score.m: Calculate results based on cross validation output
+classify_mag_feats.m: perform cross validation on all features derived from the data
+doOneCrossVal.m : perform cross validation for one feature type
+make_all_meg_feats.m : create all features for classification
+make_plots.m : Create the plots as seen in the report
+make_plv_feats.m	: create PLV features (not used in the report, but included for completeness)
+make_sim_data_demo.m: Run this file to make the figures seen in the report.
+train_all_mag_classifiers.m: Create the baseline magnitude classifier
+
+If you would like to run my feature creation on the actual data, I can contact Tom Mitchell and ask for permission.  The files are quite large (10G).  To create all features and perform classification you would run these scripts in this order:
+make_all_meg_feats.m
+classify_mag_feats.m
+calc_pdist_score.m
+
+The baseline classifier is trained with the script
+train_all_mag_classifiers.m
