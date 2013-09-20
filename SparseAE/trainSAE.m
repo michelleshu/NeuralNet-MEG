@@ -1,12 +1,13 @@
 %% trainSAE.m
 % Train a sparse autoencoder on MEG data, based on Stanford UFLDL code
 % Michelle Shu | September 17, 2013
+function trainSAE(sparsityParam)
 
 % -------------------------------------------------------------------------
 % Parameters:
 visibleSize = 306;      % number of input units
-hiddenSize = 100;       % number of hidden units
-sparsityParam = 0.01;   % desired average activation of hidden units
+hiddenSize = 306;       % number of hidden units
+%sparsityParam = 0.01;   % desired average activation of hidden units
 lambda = 0.0001;        % weight decay parameter
 beta = 3;               % weight of sparsity penalty
 
@@ -22,8 +23,8 @@ classifyDir = 'results/classifierResults';  % classifier results
 % Get patches, time series, labels from raw input
 [patches, time, words] = getData(dataFile);
 
-% % Obtain random initialization for weight parameters
-% theta = initializeParameters(hiddenSize, visibleSize);
+% Obtain random initialization for weight parameters
+theta = initializeParameters(hiddenSize, visibleSize);
 
 % -------------------------------------------------------------------------
 % Verify correctness of cost function by checking results against numerical
@@ -41,22 +42,22 @@ classifyDir = 'results/classifierResults';  % classifier results
 
 % -------------------------------------------------------------------------
 % Train sparse autoencoder with minFunc (L-BFGS) library
-% addpath minFunc/
-% options.Method = 'lbfgs';
-% options.maxIter = 3000;
-% options.maxFunEvals = 3500;
-% options.display = 'on';
-% 
-% [opttheta, cost] = minFunc( @(p) getSAECost(p, ...
-%                                    visibleSize, hiddenSize, ...
-%                                    lambda, sparsityParam, ...
-%                                    beta, patches), ...
-%                                    theta, options);
-% 
-% W1 = reshape(opttheta(1 : hiddenSize * visibleSize), hiddenSize, ...
-%     visibleSize);
-% b1 = opttheta(2 * hiddenSize * visibleSize + 1 : 2 * hiddenSize * ...
-%     visibleSize + hiddenSize);
+addpath minFunc/
+options.Method = 'lbfgs';
+options.maxIter = 3000;
+options.maxFunEvals = 3500;
+options.display = 'on';
+ 
+[opttheta, cost] = minFunc( @(p) getSAECost(p, ...
+                                   visibleSize, hiddenSize, ...
+                                   lambda, sparsityParam, ...
+                                   beta, patches), ...
+                                   theta, options);
+
+W1 = reshape(opttheta(1 : hiddenSize * visibleSize), hiddenSize, ...
+    visibleSize);
+b1 = opttheta(2 * hiddenSize * visibleSize + 1 : 2 * hiddenSize * ...
+    visibleSize + hiddenSize);
 
 % -------------------------------------------------------------------------
 % Run all MEG images through hidden layer of SAE to get sparse 
@@ -87,3 +88,15 @@ load(semMatrixFile);
 classifyMagFeats(subject, sparseRepFile, classifyDir, sem_matrix);
 
 % -------------------------------------------------------------------------
+% Compute classification accuracy
+acc_ones = zeros(5, 1);  % 1 v 2 acc over 5 trials
+acc_twos = zeros(5, 1);  % 2 v 2 acc over 5 trials
+for trial = 1 : 5
+    classifyFile = sprintf('%s/%s/%s_sparse_%i.mat', classifyDir, ...
+        subject, subject, trial);
+    [acc_ones(trial), acc_twos(trial)] = getAccuracy(classifyFile);
+end
+fprintf('1 v 2 Accuracy: %2.3f\n', mean(acc_ones));
+fprintf('2 v 2 Accuracy: %2.3f\n', mean(acc_twos));
+
+end
