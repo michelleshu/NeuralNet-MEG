@@ -1,4 +1,5 @@
-function classifyMagFeats(subject, dataFile, resDir, sem_matrix)
+function classifyMagFeats(subject, dataFile, resDir, sparsityParam, ...
+    hiddenSize, sem_matrix_file)
 % Input Parameters:
 % subject - one letter identifying which subject this is
 % dataFile - filepath where input data can be found
@@ -14,6 +15,7 @@ numFolds =30;
 num_trials = 5;
 zscore_folds = 0;
 
+load(sem_matrix_file);
 sem_matrix = zscore(sem_matrix);
 
 save(sprintf('%sparams.mat',resDir),'numWords','numFolds','num_trials',...
@@ -50,8 +52,8 @@ for tr = 1:num_trials,
     RandStream.setGlobalStream(rs);
     folds = crossvalind('Kfold',numWords,numFolds);
     doOneCrossValNoZ(struct.data, sem_matrix, folds, numFolds, numWords, ...
-        sprintf('%s/%s_sparse_%i.mat', res_sub_dir, subject, tr), ...
-        zscore_folds, 'cosine');
+        sprintf('%s/%s_sparse_%1.3dR_%iK_%i.mat', res_sub_dir, subject, ...
+        sparsityParam, hiddenSize, tr), zscore_folds, 'cosine');
 end
 
 end
