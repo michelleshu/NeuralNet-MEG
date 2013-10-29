@@ -13,10 +13,10 @@ visibleSize = 306;      % number of input units
 lambda = 0.0001;        % weight decay parameter
 beta = 3;               % weight of sparsity penalty
 
-dataFile = sprintf('%s/%s/%s_raw_avrg.mat', dataDir, subject, subject);
-networkWeightsFile = sprintf('%s/network/%s_%1.3dR_%iK.mat', ...
+dataFile = sprintf('%s/%s_raw_avrg.mat', dataDir, subject);
+networkWeightsFile = sprintf('%s/network/%s_%1.3fR_%iK.mat', ...
     resultsDir, subject, sparsityParam, hiddenSize);
-sparseRepFile = sprintf('%s/sparse/%s_%1.3dR_%iK.mat', resultsDir, ...
+sparseRepFile = sprintf('%s/sparse/%s_%1.3fR_%iK.mat', resultsDir, ...
     subject, sparsityParam, hiddenSize);
 classifyDir = sprintf('%s/classify', resultsDir);  % classifier results            
 
@@ -46,8 +46,8 @@ theta = initializeParameters(hiddenSize, visibleSize);
 % Train sparse autoencoder with minFunc (L-BFGS) library
 % addpath code/minFunc/
 options.Method = 'lbfgs';
-options.maxIter = 2000;
-options.maxFunEvals = 2000;
+options.maxIter = 3000;
+options.maxFunEvals = 3000;
 options.display = 'on';
  
 [opttheta, cost] = minFunc( @(p) getSAECost(p, ...
@@ -99,7 +99,7 @@ classifyMagFeats(subject, sparseRepFile, classifyDir, sparsityParam, ...
 %acc_ones = zeros(5, 1);  % 1 v 2 acc over 5 trials
 %acc_twos = zeros(5, 1);  % 2 v 2 acc over 5 trials
 %for trial = 1 : 5
-%    classifyFile = sprintf('%s/%s/%s_sparse_%1.3dR_%iK_%i.mat', classifyDir, ...
+%    classifyFile = sprintf('%s/%s/%s_sparse_%1.3fR_%iK_%i.mat', classifyDir, ...
 %        subject, subject, sparsityParam, hiddenSize, trial);
 %    [acc_ones(trial), acc_twos(trial)] = getAccuracy(classifyFile);
 %end
