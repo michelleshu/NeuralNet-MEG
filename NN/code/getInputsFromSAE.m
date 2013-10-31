@@ -1,4 +1,4 @@
-function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
+function inputs = getInputsFromSAE(subject, numComponents, numTimePoints)
 % Get compressed PCA representation of data in input format
 % numComponents is the number of PCA components to use (reduce sensor dims)
 % numTimePoints is the number of averaged time points (reduce time dims)
@@ -7,14 +7,11 @@ function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
 % of words and k is the total dimensions (time and sensors) used to
 % represent each word.
 
-    pcaDataDir = '../data/pca';
-    struct = load(sprintf('%s/%s_data_pca.mat', pcaDataDir, subject));
-    data = struct.data_pca;
+    pcaDataDir = '../data/sae';
+    struct = load(sprintf('%s/%s_data_sae.mat', pcaDataDir, subject));
+    data = struct.data;
     
     inputs = zeros(size(data, 1), numComponents * numTimePoints);
-    
-    % Reduce to top PCA components
-    data = data(:, 1:numComponents, :);
     
     % Average out time series and transfer results to inputs
     t_size = size(data, 3) / numTimePoints; % size of time block

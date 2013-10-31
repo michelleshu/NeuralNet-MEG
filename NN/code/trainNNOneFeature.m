@@ -23,9 +23,9 @@ for targetFeature = 1 : 50
     fprintf('Target feature: %i\n', targetFeature);
 
     % Get input and target data to use
-    inputs = getInputsFromPCA(subject, numComponents, numTimePoints);
+    inputs = getInputsFromSAE(subject, numComponents, numTimePoints);
     targets = getTargets(targetFeature, ...
-        '~/Documents/Mitchell/NeuralNet/data/sem_matrix_bin.mat');
+        '../data/sem_matrix_bin.mat');
 
     % Track number of correct predictions
     numCorrect = 0;
