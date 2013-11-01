@@ -7,20 +7,21 @@ subject = 'A';
 inputSliceSize = 306;
 timeSize = 15;
 hidden1SliceSize = 50;
-hidden2Size = 5;
+hidden2Size = 2;
 outputSize = 1;
-lambda = 0;
+lambda = 1e-4;
 
 % minFunc options
 options.Method = 'lbfgs';
-options.maxIter = 1000;
-options.maxFunEvals = 1000;
-options.TolX = 1e-9;
-options.display = 'off';
+options.maxIter = 5000;
+options.maxFunEvals = 5000;
+options.TolX = 1e-10;
+options.TolFun = 1e-10;
+options.display = 'on';
 
 percentCorrect = zeros(218, 1);
 
-for targetFeature = 1 : 50
+for targetFeature = 160
     fprintf('Target feature: %i\n', targetFeature);
 
     % Get input and target data to use
@@ -92,6 +93,8 @@ for targetFeature = 1 : 50
         if (test_pred == test_target)
             numCorrect = numCorrect + 1;
         end
+        
+        pause;
 
     end
 

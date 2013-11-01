@@ -77,7 +77,8 @@ for ex = 1 : m
     % Add result of this example to gradients.
     % For the first layer, the gradient averages result from each slice
     delta2 = reshape(delta2, hidden1SliceSize, timeSize);
-    W1grad = W1grad + (delta2 * input' / timeSize);
+    W1grad = W1grad + delta2 * input';
+    %W1grad = W1grad + (delta2 * input' / timeSize);
     W2grad = W2grad + (delta3 * a2');
     W3grad = W3grad + (delta4 * a3');
     b1grad = b1grad + delta2;

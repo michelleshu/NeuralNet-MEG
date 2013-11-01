@@ -5,5 +5,7 @@ dataMin = min(min(min(data)));
 data = data - dataMin;
 
 dataMax = max(max(max(data)));
-data = data ./ dataMax .* 0.8;
-data = data + 0.1;
+data = data ./ dataMax .* 10;
+
+%data = data ./ dataMax .* 0.8;
+%data = data + 0.1;
