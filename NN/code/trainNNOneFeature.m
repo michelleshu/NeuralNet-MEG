@@ -3,29 +3,30 @@ s = RandStream('mt19937ar','Seed','shuffle');
 RandStream.setGlobalStream(s);
 
 % Parameters to specify
-numComponents = 50;
-numTimePoints = 15;
+numComponents = 30;
+numTimePoints = 30;
 subject = 'A';
 inputSize = numComponents * numTimePoints;
-hiddenSize = 5;
+hiddenSize = 3;
 outputSize = 1;
-lambda = 0.0001;
+lambda = 1e-5;
 
 % minFunc options
 options.Method = 'lbfgs';
-options.maxIter = 1000;
-options.maxFunEvals = 1000;
+options.maxIter = 3000;
+options.maxFunEvals = 3000;
+options.TolX = 1e-10;
+options.TolFun = 1e-10;
 options.display = 'off';
 
 percentCorrect = zeros(218, 1);
 
-for targetFeature = 1 : 50
+for targetFeature = 1:218
     fprintf('Target feature: %i\n', targetFeature);
 
     % Get input and target data to use
-    inputs = getInputsFromSAE(subject, numComponents, numTimePoints);
-    targets = getTargets(targetFeature, ...
-        '../data/sem_matrix_bin.mat');
+    inputs = getInputsFromPCA(subject, numComponents, numTimePoints);
+    targets = getTargets(targetFeature, '../data/sem_matrix_bin.mat');
 
     % Track number of correct predictions
     numCorrect = 0;
@@ -75,7 +76,6 @@ for targetFeature = 1 : 50
         if (test_pred == test_target)
             numCorrect = numCorrect + 1;
         end
-
     end
 
     percentCorrect(targetFeature) = numCorrect / 60;

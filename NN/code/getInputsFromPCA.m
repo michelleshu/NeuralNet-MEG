@@ -17,6 +17,16 @@ function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
     data = data(:, 1:numComponents, :);
     
     % Average out time series and transfer results to inputs
+    % Decimation method
+%    r = size(data, 3) / numTimePoints; % rate of decimation
+%    for w = 1 : size(data, 1)
+%        word = squeeze(data(w, :, :));
+%        for c = 1 : numComponents
+%            inputs(w, (c - 1) * numTimePoints + 1 : c * numTimePoints) = ...
+%                decimate(squeeze(word(c, :)), r);
+%        end
+%    end
+    
     t_size = size(data, 3) / numTimePoints; % size of time block
     for w = 1 : size(data, 1)
         word = squeeze(data(w, :, :));
@@ -27,6 +37,5 @@ function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
                 = slice;
         end
     end
-
 end
 
