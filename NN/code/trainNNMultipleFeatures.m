@@ -14,7 +14,7 @@ numTimePoints = 30;
 subject = 'A';
 inputSize = numComponents * numTimePoints;
 hiddenSize = 20;
-outputSize = 30;
+outputSize = 40;
 lambda = 1e-4;
 
 % minFunc options
