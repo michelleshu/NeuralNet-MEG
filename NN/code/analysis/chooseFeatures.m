@@ -10,7 +10,7 @@ end
 
 eligibleValues = zeros(count, 1);
 for i = 1 : count
-    eligibleValues(i) = percentCorrectSAE(eligibleIndices(i));
+    eligibleValues(i) = percentCorrect(eligibleIndices(i));
 end
 
 [sortedVals, sortedInds] = sort(eligibleValues);

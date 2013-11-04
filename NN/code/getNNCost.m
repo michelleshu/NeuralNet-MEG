@@ -30,7 +30,7 @@ b2grad = zeros(size(b2));
 for example = 1 : m    
     % Get input and target
     a1 = inputs(example, :)';
-    t = targets(example);
+    t = targets(example, :)';
     
     % Forward propagate from input to hidden layer
     z2 = W1 * a1 + b1;

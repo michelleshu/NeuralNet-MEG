@@ -1,3 +1,5 @@
+% LEAVE ONE OUT CROSS-VALIDATION
+
 % Make random stream random
 s = RandStream('mt19937ar','Seed','shuffle');
 RandStream.setGlobalStream(s);
@@ -9,12 +11,12 @@ subject = 'A';
 inputSize = numComponents * numTimePoints;
 hiddenSize = 3;
 outputSize = 1;
-lambda = 1e-5;
+lambda = 1e-4;
 
 % minFunc options
 options.Method = 'lbfgs';
-options.maxIter = 3000;
-options.maxFunEvals = 3000;
+options.maxIter = 5000;
+options.maxFunEvals = 5000;
 options.TolX = 1e-10;
 options.TolFun = 1e-10;
 options.display = 'off';
