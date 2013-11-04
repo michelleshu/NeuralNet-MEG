@@ -34,7 +34,7 @@ options.display = 'off';
 inputs = getInputsFromPCA(subject, numComponents, numTimePoints);
 targets = getTargets(targetInds, '../data/sem_matrix_bin.mat');
 
-percentCorrect = zeros(trial, 1);
+percentCorrect = zeros(5, 1);
 
 for trial = 1 : 5
     fprintf('Trial %i\n', trial);
