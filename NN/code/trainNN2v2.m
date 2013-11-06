@@ -18,7 +18,7 @@ numComponents = 30;
 numTimePoints = 30;
 subject = 'A';
 inputSize = numComponents * numTimePoints;
-hiddenSize = 20;
+hiddenSize = 100;
 outputSize = 40;
 lambda = 1e-4;
 
@@ -107,7 +107,8 @@ for trial = 1 : 5
     end
 
     percentCorrect(trial) = numCorrect / 30;
-    fprintf('Percent Correct: %2.3f\n', percentCorrect(trial));
+    fprintf('Percent Correct: %2.3f\n %s\n', percentCorrect(trial), ...
+        datestr(now));
 end
 
 save('percentCorrect2v2.mat', 'percentCorrect');
