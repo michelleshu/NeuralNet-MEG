@@ -2,10 +2,12 @@
 % Train a sparse autoencoder on MEG data, based on Stanford UFLDL code
 % Michelle Shu | September 17, 2013
 
-function trainSAE(sparsityParam, hiddenSize, subject, resultsDir, ...
-    dataDir, semMatrix)
+function trainSAE(sparsityParam, hiddenSize, subject, semMatrix)
 
 % -------------------------------------------------------------------------
+dataDir = './data/raw';
+resultsDir = './SparseAE/results';
+
 % Parameters:
 visibleSize = 306;      % number of input units
 %hiddenSize = 100;       % number of hidden units
@@ -46,8 +48,8 @@ theta = initializeParameters(hiddenSize, visibleSize);
 % Train sparse autoencoder with minFunc (L-BFGS) library
 % addpath code/minFunc/
 options.Method = 'lbfgs';
-options.maxIter = 3000;
-options.maxFunEvals = 3000;
+options.maxIter = 5000;
+options.maxFunEvals = 5000;
 options.display = 'on';
  
 [opttheta, cost] = minFunc( @(p) getSAECost(p, ...
@@ -91,8 +93,8 @@ save(sparseRepFile, 'data', 'time', 'words');
 % -------------------------------------------------------------------------
 % Use sparse vector representations as inputs to classifier
 % addpath classifier/
-classifyMagFeats(subject, sparseRepFile, classifyDir, sparsityParam, ...
-    hiddenSize, semMatrix);
+%classifyMagFeats(subject, sparseRepFile, classifyDir, sparsityParam, ...
+%    hiddenSize, semMatrix);
 
 % -------------------------------------------------------------------------
 % Compute classification accuracy
