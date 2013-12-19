@@ -1,0 +1,56 @@
+NeuralNet-MEG
+Neural network code for MEG data on 60 nouns
+Michelle Shu | Fall 2013
+
+Data:
+Raw data should reside in directory data/raw, e.g. data/raw/A_raw_avrg.mat
+
+Code:
+There are several sections of this project under the main directory. The most 
+relevant are SparseAE (sparse autoencoders) and NN (supervised neural network).
+Additionally, RandomRNN is an initial attempt to replicate Richard Socher's 
+deep networks for 3D images (not very successful), and CNN trains a neural
+network with a convolutional structure (also not very successful)
+
+A. SparseAE
+	1. In trainSAE.m:
+		Specify the hyperparameters for training: # nodes in hidden layer, 
+		sparsity of activation, lambda (weight of regularization term) and
+		beta (weight of sparsity term).
+		
+		Also, set the file and directory names at which results will be saved: 
+		 - networkWeightsFile: W1, W2, b1, b2 (neural network weights)
+		 - sparseRepFile: sparse representation of original data (the result of
+		 	running it through trained SAE)
+		 - classifyDir: results of classification accuracy test (2 v 2)
+		 
+		Run this file to train network using minFunc library.
+		
+	2. In getSAECost.m:
+		The objective (cost) function is defined here. Backpropagation will
+		proceed to adjust the weights of the network until this cost is
+		minimized.
+		
+B. NN
+	This code trains a neural network to predict semantic features (binary 
+	ratings)from a compressed version of the raw MEG data
+	1. Data compression
+		In sensor dimension, either use PCA or SAE (about the same effect) to
+		reduce 306 sensors to ~30 dimensions (~95% variance preserved)
+		See NN/code/preprocessing for PCA reduction, use /SparseAE results for
+		SAE.
+		
+		Data compressed along time dimension by averaging. (This is done in 
+		getInputsFromPCA, which is called from the main file trainNN2v2.m)
+		
+	2. Subsets of semantic features were selected according to how accurately 
+		they are predicted individually (trainNNOneFeature.m) and how evenly
+		distributed the ratings are between examples (i.e. mean rating between
+		0.3 and 0.7) The feature subsets are listed in *features.txt
+	
+	3. trainNN2v2.m will train the neural network to predict semantic features
+		in targetInds array and report 2 v 2 classification results.
+		
+	4. Use code in /NN/visualization to produce helmet movies.
+	
+		
