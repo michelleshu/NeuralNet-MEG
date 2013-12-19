@@ -1,6 +1,6 @@
-subjects = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
-rawDataDir = '~/Documents/Mitchell/NeuralNet/data/raw';
-pcaDataDir = '~/Documents/Mitchell/NeuralNet/data/pca';
+subjects = {'B', 'C', 'D', 'E', 'F' ,'G', 'I', 'J'};
+rawDataDir = '~/Documents/Mitchell/NeuralNet-MEG/data/raw';
+pcaDataDir = '~/Documents/Mitchell/NeuralNet-MEG/data/pca';
 
 for s = 1 : length(subjects)
     subject = subjects{s};
@@ -27,6 +27,9 @@ for s = 1 : length(subjects)
     for i = 1 : words
         X((i - 1) * times + 1 : i * times, :) = squeeze(data(i, :, :))';
     end
+    
+    % Normalize by using Z-scores
+    X = zscore(X);
     
     %% Compute principal components of data matrix
     [coeff, score, eig] = princomp(X);

@@ -13,7 +13,7 @@ numComponents = 30;
 numTimePoints = 30;
 subject = 'A';
 inputSize = numComponents * numTimePoints;
-hiddenSize = 20;
+hiddenSize = 100;
 outputSize = 40;
 lambda = 1e-4;
 
@@ -23,7 +23,7 @@ options.maxIter = 10000;
 options.maxFunEvals = 10000;
 options.TolX = 1e-6;
 options.TolFun = 1e-6;
-options.display = 'off';
+options.display = 'on';
 
 % Get input and target data to use
 inputs = getInputsFromPCA(subject, numComponents, numTimePoints);
@@ -32,7 +32,7 @@ targets = getTargets(targetInds, '../data/sem_matrix_bin.mat');
 errorNorms = zeros(60, 1);
 percentCorrect = zeros(60, 1);
 
-for testEx = 1 : 10 : 60
+for testEx = 1 : 60
 % Select one example to leave out for test and train on rest
     fprintf('Test example: %i\n', testEx);
 
@@ -74,6 +74,7 @@ for testEx = 1 : 10 : 60
         end
     end
     percentCorrect(testEx) = correct / numel(test_pred);
-    disp([testEx percentCorrect(testEx)]);
+    fprintf('%2.3f \t %2.3f \t %s\n', percentCorrect(testEx), ...
+        errorNorms(testEx), datestr(now));
 end
     

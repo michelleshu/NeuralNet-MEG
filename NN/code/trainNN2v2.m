@@ -1,9 +1,23 @@
 % LEAVE TWO OUT CROSS-VALIDATION
 
 % Select multiple target features by index
-targetInds = [1:12, 16, 25, 36, 37, 45, 46, 53, 54, 55, 56, 72, 74, 75, ...
-    76, 84, 86, 87, 91, 117, 121, 128, 144, 146, 154, 160, 169, 191, 195];
+%targetInds = [1:12, 16, 25, 36, 37, 45, 46, 53, 54, 55, 56, 72, 74, 75, ...
+%    76, 84, 86, 87, 91, 117, 121, 128, 144, 146, 154, 160, 169, 191, 195];
 
+% 50 features
+targetInds = [173, 175, 202, 31, 206, 63, 64, 77, 115, 194, 197, 201, 47, ...
+    53, 145, 187, 55, 71, 124, 128, 153, 190, 218, 37, 154, 169, 191, ...
+    195, 36, 56, 117, 164, 16, 25, 46, 54, 74, 91, 121, 9, 45, 76, 84, ...
+    86, 87, 75, 160, 72, 144, 146];
+
+% 95 features
+% targetInds = [28, 61, 27, 68, 113, 188, 193, 30, 41, 111, 165, 73, 166, ...
+%     10, 69, 70, 147, 200, 44, 52, 148, 155, 176, 180, 196, 20, 29, 32, ...
+%     80, 150, 192, 62, 65, 79, 162, 189, 33, 38, 157, 186, 209, 40, 42, ...
+%     59, 66, 173, 175, 202, 31, 206, 63, 64, 77, 115, 194, 197, 201, 47, ...
+%     53, 145, 187, 55, 71, 124, 128, 153, 190, 218, 37, 154, 169, 191, ...
+%     195, 36, 56, 117, 164, 16, 25, 46, 54, 74, 91, 121, 9, 45, 76, 84, ...
+%     86, 87, 75, 160, 72, 144, 146];
 
 % Make random stream random
 s = RandStream('mt19937ar','Seed','shuffle');
@@ -18,14 +32,14 @@ numComponents = 30;
 numTimePoints = 30;
 subject = 'A';
 inputSize = numComponents * numTimePoints;
-hiddenSize = 100;
-outputSize = 40;
+hiddenSize = 50;
+outputSize = 50;
 lambda = 1e-4;
 
 % minFunc options
 options.Method = 'lbfgs';
-options.maxIter = 10000;
-options.maxFunEvals = 10000;
+options.maxIter = 15000;
+options.maxFunEvals = 15000;
 options.TolX = 1e-6;
 options.TolFun = 1e-6;
 options.display = 'off';
@@ -36,7 +50,7 @@ targets = getTargets(targetInds, '../data/sem_matrix_bin.mat');
 
 percentCorrect = zeros(5, 1);
 
-for trial = 1 : 5
+for trial = 1
     fprintf('Trial %i\n', trial);
     
     % Track number of correct predictions
@@ -44,7 +58,7 @@ for trial = 1 : 5
     % Get splits for this trial
     splits = squeeze(allSplits(trial, :, :));
 
-    for fold = 1 : 30
+    for fold = 19 : 30
         testEx1 = splits(1, fold);
         testEx2 = splits(2, fold);
         % Make smaller number testEx1
@@ -91,11 +105,18 @@ for trial = 1 : 5
         test_pred1 = sigmoid(W2 * sigmoid(W1 * test_input1 + b1) + b2);
         test_pred2 = sigmoid(W2 * sigmoid(W1 * test_input2 + b1) + b2);
         
+                
         d1 = pdist([test_pred1'; test_target1']) + ...
             pdist([test_pred2'; test_target2']);
         
         d2 = pdist([test_pred1'; test_target2']) + ...
             pdist([test_pred2'; test_target1']);
+
+%         d1 = pdist([test_pred1'; test_target1'], 'cosine') + ...
+%             pdist([test_pred2'; test_target2'], 'cosine');
+%         
+%         d2 = pdist([test_pred1'; test_target2'], 'cosine') + ...
+%             pdist([test_pred2'; test_target1'], 'cosine');
 
         if (d1 < d2)
             numCorrect = numCorrect + 1;

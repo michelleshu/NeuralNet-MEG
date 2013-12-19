@@ -1,0 +1,40 @@
+1 Is it an animal?
+2 Is it a body part?
+3 Is it a building?
+4 Is it a building part?
+5 Is it clothing?
+6 Is it furniture?
+7 Is it an insect?
+8 Is it a kitchen item?
+9 Is it man-made?
+10 Is it a tool?
+11 Can you eat it?
+12 Is it a vehicle?
+16 Is it made of metal?
+25 Is it always the same color(s)?
+36 Is it curved?
+37 Is it straight?
+45 Is it tapered?
+46 Is it round?
+53 Is it soft?
+54 Is it heavy?
+55 Is it lightweight?
+56 Is it dense?
+72 Is it hollow?
+74 Does it have a hard outer shell?
+75 Does it have at least one hole?
+76 Is it alive?
+84 Does it grow?
+86 Is it bigger than a loaf of bread?
+87 Is it bigger than a microwave oven?
+91 Is it taller than a person?
+117 Does it make sound continuously when active?
+121 Is it fast?
+128 Can it cause you pain?
+144 Can it keep you dry?
+146 Does it provide shade?
+154 Can you hold it in one hand?
+160 Do you use it daily?
+169 Could you fit inside it?
+191 Is it usually outside?
+195 Would you find it in an office?

@@ -5,11 +5,11 @@ s = RandStream('mt19937ar','Seed','shuffle');
 RandStream.setGlobalStream(s);
 
 % Parameters to specify
-numComponents = 30;
+numComponents = 50;
 numTimePoints = 30;
 subject = 'A';
 inputSize = numComponents * numTimePoints;
-hiddenSize = 3;
+hiddenSize = 2;
 outputSize = 1;
 lambda = 1e-4;
 
@@ -23,17 +23,17 @@ options.display = 'off';
 
 percentCorrect = zeros(218, 1);
 
-for targetFeature = 1:218
+for targetFeature = 86
     fprintf('Target feature: %i\n', targetFeature);
 
     % Get input and target data to use
-    inputs = getInputsFromPCA(subject, numComponents, numTimePoints);
-    targets = getTargets(targetFeature, '../data/sem_matrix_bin.mat');
+    inputs = getInputsFromPCAUA(subject, numComponents, numTimePoints);
+    targets = getTargetsUA(subject, targetFeature, '../data/sem_matrix_bin.mat');
 
     % Track number of correct predictions
     numCorrect = 0;
 
-    for testEx = 1 : size(targets)
+    for testEx = 1 : size(targets, 1)
     % Select one example to leave out for test and train on rest
         fprintf('Test example: %i\n', testEx);
 
@@ -77,10 +77,13 @@ for targetFeature = 1:218
 
         if (test_pred == test_target)
             numCorrect = numCorrect + 1;
+            disp('Correct');
+        else
+            disp('Incorrect');
         end
     end
 
-    percentCorrect(targetFeature) = numCorrect / 60;
+    percentCorrect(targetFeature) = numCorrect / size(targets, 1);
     fprintf('Percent Correct: %2.3f\n', percentCorrect(targetFeature));
     
 end

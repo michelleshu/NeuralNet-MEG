@@ -1,6 +1,6 @@
 subjects = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'};
 totalComponents = 306;
-pcaDataDir = '~/Documents/Mitchell/NeuralNet/data/pca';
+pcaDataDir = '~/Documents/Mitchell/NeuralNet-MEG/data/unaveraged_pca';
 
 var_matrix = zeros(length(subjects), totalComponents);
 

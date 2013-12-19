@@ -1,4 +1,4 @@
-function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
+function inputs = getInputsFromPCAUA(subject, numComponents, numTimePoints)
 % Get compressed PCA representation of data in input format
 % numComponents is the number of PCA components to use (reduce sensor dims)
 % numTimePoints is the number of averaged time points (reduce time dims)
@@ -7,7 +7,7 @@ function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
 % of words and k is the total dimensions (time and sensors) used to
 % represent each word.
 
-    pcaDataDir = '../data/pca';
+    pcaDataDir = '../data/unaveraged_pca';
     struct = load(sprintf('%s/%s_data_pca.mat', pcaDataDir, subject));
     data = struct.data_pca;
     
@@ -37,8 +37,5 @@ function inputs = getInputsFromPCA(subject, numComponents, numTimePoints)
                 = slice;
         end
     end
-    
-    % Normalize across words with z-score
-    inputs = zscore(inputs);
 end
 
